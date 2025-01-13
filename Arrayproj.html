@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Examples</title>
+</head>
+
+<body>
+    <h2>Evaluate Variables</h2>
+    <button onclick="evaluateVariables()">Try It!</button>
+    <p id="evaluateDemo"></p>
+
+    <h2>Map an Array</h2>
+    <button onclick="mapArray()">Try It!</button>
+    <p id="mapDemo"></p>
+
+    <h2>Sort and Reverse Numbers</h2>
+    <button onclick="sortAndReverse()">Try It!</button>
+    <p id="sortReverseDemo"></p>
+
+    <script>
+
+        function evaluateVariables() {
+            var x = 10;
+            var y = 20;
+            var a = eval("x + y") + "<br>";
+            var b = eval("2 * 2") + "<br>";
+            var c = eval("y - x") + "<br>";
+            var res = a + b + c;
+            document.getElementById("evaluateDemo").innerHTML = res;
+        }
+
+
+        function mapArray() {
+            var numbers = [4, 9, 16, 25];
+            var result = numbers.map(Math.sqrt);
+            document.getElementById("mapDemo").innerHTML = result.join(", ");
+        }
+
+
+        function sortAndReverse() {
+            var numbers = [40, 100, 1, 5, 25, 10];
+            numbers.sort(function (a, b) { return a - b });
+            var sorted = "Sorted: " + numbers.join(", ") + "<br>";
+            numbers.reverse();
+            var reversed = "Reversed: " + numbers.join(", ");
+            document.getElementById("sortReverseDemo").innerHTML = sorted + reversed;
+        }
+    </script>
+</body>
+
+</html>
